@@ -8,7 +8,7 @@
    - 在電腦上開啟此專案，對 `src/main.js` 進行小幅修改。
    - 不要進行 Commit。
 2. **手機端操作**：
-   - 在手機上登入 GitHub，找到此 Repository。
+   - 在手機上登入 GitHub，找到此 程式庫。
    - 按下 `.` 鍵（或點擊 Web Editor）進入編輯模式。
    - 您會看到剛才在電腦端修改的內容。
    - 修改一段文字，並在 Commit Message 中註明 `[Mobile Edit]`。

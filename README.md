@@ -1,48 +1,44 @@
-針對 **`01-unit-vscode-online` (VS Code Online 快速啟動)** 單元，這個單元的 Assignments (作業) 目標是讓學生理解「瀏覽器即開發環境」的操作流程。
+# 01-unit-vscode-online: VS Code Online 快速啟動
 
-以下是在 **GitHub Classroom** 部署這三個實戰任務的具體建議：
+歡迎來到本單元的作業！本作業的目標是讓你理解「瀏覽器即開發環境」的操作流程，並學會如何在雲端與不同裝置間無縫切換開發環境。
 
-### 1. 核心設置：啟用 GitHub Codespaces 支援
-在建立 Classroom 作業時，請務必在設定頁面中勾選 **"Enable GitHub Codespaces"**。這能讓學員獲得免費的雲端運算時數，且無需在本地安裝任何軟體即可完成作業。
+## 實戰任務
+
+請依序完成以下三個任務，並確保將你的修改提交（Push）回此程式庫。
 
 ---
 
-### 2. 作業任務部署細節
+### 任務 1：Web Serial 硬體連線測試 (Web Serial Lab)
+*   **目標**：練習使用 `vscode.dev` 讀取 ESP32 訊號。
+*   **操作步驟**：
+    1. 在本程式庫頁面按下快捷鍵 `.` 進入 Web Editor（或是點擊網址列的 `github.com` 改成 `github.dev`）。
+    2. 連接你的 ESP32 硬體，並嘗試讀取訊號。
+    3. 將你從 Web Serial 監控視窗看到的 "Hello" 原始數據複製並貼入 `serial-log.md` 檔案中。
+    4. 執行 `Commit` 並 `Push` 回到 GitHub。
 
-#### 任務 1：Web Serial 硬體連線測試 (Web Serial Lab)
-*   **目標**：練習使用 `vscode.dev` (快捷鍵 `.`) 讀取 ESP32 訊號。
-*   **Classroom 部署建議**：
-    *   **Template Repo**：提供一個 `serial-log.md` 檔案。
-    *   **驗證方式**：要求學生將從 Web Serial 監控視窗看到的 "Hello" 原始數據截圖或複製內容，貼入 `serial-log.md` 並執行 `push`。這能確認他們真的有成功建立「瀏覽器 - 硬體」的通訊路徑。
-
-#### 任務 2：Codespaces 雲端編譯實戰 (Cloud Build Lab)
+### 任務 2：Codespaces 雲端編譯實戰 (Cloud Build Lab)
 *   **目標**：在雲端 Container 中執行 Linux 指令。
-*   **Classroom 部署建議**：
-    *   **Template Repo (關鍵！)**：包含 `.devcontainer/` 資料夾。在其中的 `devcontainer.json` 設置 `postCreateCommand`: `"npm install"`，模擬專業工作流。
-    *   **自動評分 (Autograding)**：
-        *   提供一個 `cloud-test.js`。
-        *   要求學生執行 `node cloud-test.js > test-result.log`。
-        *   **Autograding 腳本**：檢查 `test-result.log` 是否包含預期文字（如「雲端環境運行成功」）。
+*   **操作步驟**：
+    1. 在本程式庫頁面點擊「Code」綠色按鈕，切換到「Codespaces」標籤頁，並點擊「Create codespace on main」。
+    2. 等待雲端環境啟動（預計會自動執行 `npm install`）。
+    3. 在下方終端機 (Terminal) 執行以下指令：
+       ```bash
+       node cloud-test.js > test-result.log
+       ```
+    4. 將產生的 `test-result.log` 檔案進行 `Commit` 與 `Push`。
 
-#### 任務 3：跨裝置同步除錯挑戰 (Cross-Device Sync)
+### 任務 3：跨裝置同步除錯挑戰 (Cross-Device Sync)
 *   **目標**：體驗雲端開發的「接力」特性。
-*   **Classroom 部署建議**：
-    *   **操作規則**：引導學生在手機端按下 `.` 進入編輯，並在 Commit Message 中明確註明 `[Mobile Edit]` 字樣。
-    *   **導師評量 (Tutor Review)**：導師只需在 Classroom Dashboard 查看 Commit History，看到有來自不同裝置特徵的提交紀錄，即可打分。這也順便訓練了學生撰寫「有意義 Commit Message」的習慣。
+*   **操作步驟**：
+    1. 詳細操作指南請參閱 [instructions.md](instructions.md)。
+    2. **核心挑戰**：先在電腦端對 `src/main.js` 修改（不要 Commit），接著拿起手機登入 GitHub 進入編輯模式，你會看到剛才修改的內容。
+    3. 在手機端完成修改並提交，請務必在 Commit Message 中註明 `[Mobile Edit]` 字樣。
 
 ---
 
-### 3. 導師管理精選工具
-*   **範本目錄建議 (Template Structure)**：
-    ```text
-    .
-    ├── .devcontainer/    # 確保 Codespace 環境預裝好 Node.js
-    ├── src/
-    │   └── main.js
-    ├── cloud-test.js     # 任務 2 測試腳本
-    ├── serial-log.md     # 任務 1 回報檔案
-    └── instructions.md   # 任務 3 的跨裝置操作指南
-    ```
-*   **回饋建議**：本單元非常適合使用 **"Inline Comments"**。導師可以在學生提交的代碼中標註：「看到你在手機端也完成提交了，這就是雲端開發的靈活性！」。
+## 提交說明
+* 確保所有任務要求的檔案（`serial-log.md`、`test-result.log`）都已成功提交到此程式庫。
+* 導師將根據你的 Commit 紀錄、Commit Message 以及檔案內容進行評分。
+* 本單元旨在讓你感受「雲端開發 (Codespaces)」與「本地開發 (Desktop)」在工作流上的差異。
 
-這套部署方案能讓學生直接感受到「雲端開發 (Codespaces)」與「本地開發 (Desktop)」在工作流上的巨大差異，同時降低了學員因電腦配備不足而產生的學習門檻。
+祝你順利完成任務！
