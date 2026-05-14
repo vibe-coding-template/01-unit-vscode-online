@@ -9,11 +9,11 @@
 
 ### 2. 作業任務部署細節
 
-#### 任務 1：Web Serial 硬體連線測試 (Web Serial Lab)
-*   **目標**：練習使用 `vscode.dev` (快捷鍵 `.`) 讀取 ESP32 訊號。
+#### 任務 1：Codespaces 一鍵啟動與測試驗證 (Codespaces Boot Lab)
+*   **目標**：確認學生可在純雲端完成開發環境啟動、測試與問題排除循環。
 *   **Classroom 部署建議**：
-    *   **Template 程式庫**：提供一個 `serial-log.md` 檔案。
-    *   **驗證方式**：要求學生將從 Web Serial 監控視窗看到的 "Hello" 原始數據截圖或複製內容，貼入 `serial-log.md` 並執行 `push`。這能確認他們真的有成功建立「瀏覽器 - 硬體」的通訊路徑。
+    *   **Template 程式庫**：提供 `codespaces-lab-report.md` 模板，讓學生記錄啟動時間、錯誤訊息與修正方式。
+    *   **驗證方式**：要求學生提交 `test-result.log` 與 `codespaces-lab-report.md`。導師可快速判斷學生是否真的完成「啟動 -> 測試 -> 修正 -> 再測試」。
 
 #### 任務 2：Codespaces 雲端編譯實戰 (Cloud Build Lab)
 *   **目標**：在雲端 Container 中執行 Linux 指令。
@@ -40,7 +40,7 @@
     ├── src/
     │   └── main.js
     ├── cloud-test.js     # 任務 2 測試腳本
-    ├── serial-log.md     # 任務 1 回報檔案
+    ├── codespaces-lab-report.md  # 任務 1 回報檔案
     └── instructions.md   # 任務 3 的跨裝置操作指南
     ```
 *   **回饋建議**：本單元非常適合使用 **"Inline Comments"**。導師可以在學生提交的代碼中標註：「看到你在手機端也完成提交了，這就是雲端開發的靈活性！」。

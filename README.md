@@ -8,13 +8,18 @@
 
 ---
 
-### 任務 1：Web Serial 硬體連線測試 (Web Serial Lab)
-*   **目標**：練習使用 `vscode.dev` 讀取 ESP32 訊號。
+### 任務 1：Codespaces 一鍵啟動與測試驗證 (Codespaces Boot Lab)
+*   **目標**：在不依賴本機環境的情況下，完成雲端開發環境啟動與第一次測試循環。
 *   **操作步驟**：
-    1. 在本程式庫頁面按下快捷鍵 `.` 進入 Web Editor（或是點擊網址列的 `github.com` 改成 `github.dev`）。
-    2. 連接你的 ESP32 硬體，並嘗試讀取訊號。
-    3. 將你從 Web Serial 監控視窗看到的 "Hello" 原始數據複製並貼入 `serial-log.md` 檔案中。
-    4. 執行 `Commit` 並 `Push` 回到 GitHub。
+    1. 在本程式庫頁面點擊「Code」綠色按鈕，切換到「Codespaces」標籤頁，並點擊「Create codespace on main」。
+    2. 等待雲端環境啟動完成（首次建立可能需要 1-3 分鐘）。
+    3. 在終端機執行：
+       ```bash
+       npm install
+       node cloud-test.js > test-result.log
+       ```
+    4. 參考 `codespaces-lab-report.md`，填入你的啟動時間、遇到問題與修正紀錄。
+    5. 將 `test-result.log` 與 `codespaces-lab-report.md` 一起 `Commit` 並 `Push`。
 
 ### 任務 2：Codespaces 雲端編譯實戰 (Cloud Build Lab)
 *   **目標**：在雲端 Container 中執行 Linux 指令。
@@ -37,7 +42,7 @@
 ---
 
 ## 提交說明
-* 確保所有任務要求的檔案（`serial-log.md`、`test-result.log`）都已成功提交到此程式庫。
+* 確保所有任務要求的檔案（`codespaces-lab-report.md`、`test-result.log`）都已成功提交到此程式庫。
 * 導師將根據你的 Commit 紀錄、Commit Message 以及檔案內容進行評分。
 * 本單元旨在讓你感受「雲端開發 (Codespaces)」與「本地開發 (Desktop)」在工作流上的差異。
 
